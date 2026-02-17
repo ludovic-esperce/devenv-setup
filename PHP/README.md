@@ -1,3 +1,40 @@
+# Installation de PHP
+
+Il est possible d'installer PHP en utilisant Winget et la commande suivante :
+
+```sh
+winget install PHP.PHP.8.4.2
+```
+
+Pour vérifier la bonne installation de PHP et la mise à jour correcte des variables d'environnement, utiliser la commande suivante :
+
+```sh
+php --version
+```
+
+# Installation de composer
+
+[Composer est un outil de gestion de dépendances pour PHP](https://getcomposer.org/doc/00-intro.md).
+
+Il permet de :
+- gérer les dépendances (bilbiothèques utilisées par le projet)
+- faciliter la mise à jour : simplification de la mise à jour des bibliothèques.
+- utiliser un **autoloader** : permet de trouver automatiquement les fichier à importer lorsque l'on souhaite utiliser une classe.
+
+Procédure d'installation :
+1. Télécharger et installer Composer
+  - récupérer l'installateur sur le [site officiel](https://getcomposer.org/download/)
+  - démarrer l'installateur et installer l'outil pour tous les utilisateurs
+
+2. Modification de la variable d'environnement PATH
+  - ajouter le dossier contenant les exécutables de `composer` dans le `PATH`
+
+Il est possible de vérifier la bonne installation de l'outil avec la commande suivante :
+
+```sh
+composer --version
+```
+
 # Procédure d'activation de xDebug
 
 ## Sous Windows
