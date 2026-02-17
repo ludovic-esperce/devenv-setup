@@ -5,7 +5,7 @@
 1. Suivre les instructions de cette page : [Wizard xdebug](https://xdebug.org/wizard)
 2. Installer l'extension xDebug pour PHP : https://marketplace.visualstudio.com/items?itemName=xdebug.php-debug
 3. Modifier le `launch.json` de VSCode avec le contenu suivant :
-```
+```json
 {
     // Use IntelliSense to learn about possible attributes.
     // Hover to view descriptions of existing attributes.
