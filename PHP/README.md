@@ -12,7 +12,9 @@ Pour vérifier la bonne installation de PHP et la mise à jour correcte des vari
 php --version
 ```
 
-# Installation de composer
+# Mise en place de composer
+
+## Installation
 
 [Composer est un outil de gestion de dépendances pour PHP](https://getcomposer.org/doc/00-intro.md).
 
@@ -34,6 +36,24 @@ Il est possible de vérifier la bonne installation de l'outil avec la commande s
 ```sh
 composer --version
 ```
+
+## Initialisation d'un projet
+
+1. Création d'un nouveau projet :
+- se positionner dans un dossier dans lequel sera créer le projet
+- utiliser la commande d'initialisation :
+```sh
+compose init
+```
+- suivre les instructions
+
+2. Installation de dépendances répértoriée sur [Packagist](https://packagist.org/) :
+- ajouter une dépendance avec :
+```sh
+composer require <nom-paquet>
+```
+
+Plus d'informations disponibles sur composer sur l'article disponible [ici](https://www.dev-metal.com/composer-tutorial/).
 
 # Procédure d'activation de xDebug
 
