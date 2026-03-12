@@ -3,3 +3,4 @@ Ce dépôt contient un ensemble de procédure pour la mise en place d'environnem
 Vous y trouverez les langages/technologies suivantes :
 - Java
 - PHP
+- JS
