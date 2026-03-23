@@ -250,3 +250,7 @@ Ajout d'un fichier `.vscode\launch.json` faisant figurer une configuration de d�
 ```
 
 Il faudra bien veiller à adapter le "pathMappings" en fonction du chemin vers le projet dans le conteneur.
+
+Une fois le fichier `launch.json` modifié il sera possible d'activer une session de débogage comme suit :
+
+![Lancement d'une session de débogage via VSCode](./img/vscode-launch-debug-session.gif)
