@@ -57,6 +57,37 @@ Plus d'informations disponibles sur composer sur l'article disponible [ici](http
 
 # Procédure d'activation de xDebug
 
+## Principe de fonctionnement
+
+- XDebug tourne dans le conteneur Docker (PHP-FPM ou Apache/Nginx).
+- Le navigateur déclenche le débogage via un cookie ou un paramètre GET (XDEBUG_SESSION).
+- XDebug se connecte à l'IDE (PHPStorm, VSCode, etc.) via un port dédié (généralement 9003).
+- L’IDE écoute et permet de suivre l’exécution du code.
+
+Il est important de noter que c'est l'IDE qui va écouter les évènements générés par le serveur. Pour plus d'informations concernant le fonctionnement de XDebug vous pourrez consulter l'article disponible [ici](https://crosp.net/blog/software-development/web/php/understanding-and-using-xdebug-with-phpstorm-and-magento-remotely/).
+
+Ci-dessous un diagramme de séquence représentant les échanges entre les acteurs :
+
+```mermaid
+sequenceDiagram
+    participant IDE
+    participant Navigateur
+    participant PHP/Xdebug
+
+    Note right of PHP/Xdebug: php.ini : xdebug.mode=debug
+
+    Navigateur->>+Navigateur: Démarrage de la session de débogage via extension (COOKIE)
+
+    Navigateur->>+PHP/Xdebug: Activer session de débogage
+    
+    PHP/Xdebug-->>-IDE: Démarrage session OK / début échange via protocol DBGp
+
+
+    IDE->>+PHP/Xdebug: Configuration des "breakpoints"
+
+    IDE<<->>+PHP/Xdebug: Echanges via protocol DBGp
+```
+
 ## Sous Windows avec installation locale
 
 1. Suivre les instructions de cette page : [Wizard xdebug](https://xdebug.org/wizard)
@@ -117,20 +148,6 @@ Plus d'informations disponibles sur composer sur l'article disponible [ici](http
 4. Utiliser l'icône de debug pour lancer le debugger avec l'option `Launch built-in web server`
 
 ## Environnement de développement Docker
-
-### Principe de fonctionnement
-
-- XDebug tourne dans le conteneur Docker (PHP-FPM ou Apache/Nginx).
-- Le navigateur déclenche le débogage via un cookie ou un paramètre GET (XDEBUG_SESSION).
-- XDebug se connecte l'IDE (PHPStorm, VSCode, etc.) via un port dédié (généralement 9003).
-- L’IDE écoute et permet de suivre l’exécution du code.
-
-```mermaid
-graph TD
-    A[Navigateur] -->|Requête HTTP (XDEBUG_SESSION)| B[Conteneur Docker\n(PHP + XDebug)]
-    B -->|Port 9003| C[IDE\n(PHPStorm, VSCode, etc.)]
-    C -->|Contrôle du débogage| B
-```
 
 ### Configuration au niveau de Docker
 
