@@ -1,13 +1,15 @@
 # Descriptif de la procédure
 
 Cette procédure comprend les étapes suivantes :
-1. installatoin de PHP
+1. installation de PHP
 2. installation de composer
 3. activation de xDebug :
     - avec installation locale
     - avec environnement Docker
 
 # Installation de PHP
+
+## Installation avec Winget
 
 Il est possible d'installer PHP en utilisant Winget et la commande suivante :
 
@@ -26,6 +28,27 @@ Pour vérifier la bonne installation de PHP et la mise à jour correcte des vari
 ```sh
 php --version
 ```
+
+## Activation d'extensions
+
+Les extensions PHP permettent d'ajouter des fonctionnalités diverses, pour un environnement de développement il est conseillé d'activer les extensions suivantes () :
+- `openssl` : support d'opérations cryptographiques
+- `pdo_mysql` : requêtage via PDO de BD MySQL
+- `pdo_postgre` : requêtage via PDO de BD Postgre
+- `zip` : rend possible l'extraction des archives Zip
+- `mbstring` (Multibyte string) : permet le traitement des chaînes de caractères UTF-8
+
+Pour activer une extension il faut décommenter les lignes `extension=<nom-extension>` au fichier de configuration `php.ini`.
+
+Afin de retrouver la localisation du fichier `php.ini` il est possible d'analyser le retour de la commande :
+
+```sh
+php -i
+```
+
+Voici un exemple de ce qui est renvoyé
+
+![Retour de la commande "php -i" pour localiser le fichier "php.ini"](img/php-i.PNG)
 
 # Mise en place de composer
 
@@ -53,6 +76,9 @@ composer --version
 ```
 
 ## Initialisation d'un projet
+
+> [!IMPORTANT]  
+> Ce qui suit permet d'initialiser un projet "vanilla PHP". Se référer aux sous-dossiers spécifiques pour l'initialisation de projets basés sur des frameworks.
 
 1. Création d'un nouveau projet :
 - se positionner dans un dossier dans lequel sera créer le projet

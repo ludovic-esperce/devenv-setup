@@ -1,6 +1,5 @@
 # Installation d'un environnement de développement Symfony
 
-
 > [!IMPORTANT]  
 > Une installation de `php` et `composer` doit être fonctionnelle avant de pouvoir installer `symfony-cli`.
 >
@@ -8,7 +7,9 @@
 
 ## Installation de "symfony-cli"
 
-Symfony CLI (pour "client") est une application utilisable dans un terminal permettant de créer et constuire des applications Symfony en ligne de commande. La documentation officielle détaillant l'installation est [disponible ici](https://symfony.com/download).
+Symfony CLI (pour "client") est une application utilisable dans un terminal permettant de créer et constuire des applications Symfony en ligne de commande.
+
+La documentation officielle détaillant l'installation est [disponible ici](https://symfony.com/download).
 
 Deux méthodes sont possibles pour installer `symfony-cli` :
 - utilisation de [`scoop`](https://scoop.sh/) : installateur de logiciels en ligne de commande
@@ -32,7 +33,7 @@ Dans un terminal, se rendre dans un dossier de travail et effectuez la commande 
 symfony new <nom-projet> --version="8.0.*" --webapp
 ```
 
-Il est possible que « symfony-cli » vous renvoie l’erreur suivante :
+Il est possible que `symfony-cli` renvoie l’erreur suivante :
 
 ```text
 The openssl extension is required for SSL/TLS protection but is not available. If you can not enable the openssl extension, you can disable this error, at your own risk, by setting the 'disable-tls' option to true.
