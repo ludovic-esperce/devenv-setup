@@ -4,3 +4,4 @@ Vous y trouverez les langages/technologies suivantes :
 - Java
 - PHP
 - JS
+- Postgres (conteneurisée)
