@@ -68,13 +68,14 @@ Dans le fichier `.env`, contenant les variables d’environnement, configurer la
 
 ```conf
 # customize this line!
-DATABASE_URL="mysql://<utilisateur-bd>:<mot-de-passe>@<ip-serveur>:<port-sgbd>/<nom-bd>?serverVersion=5.7"
+DATABASE_URL="mysql://<utilisateur-bd>:<mot-de-passe>@<ip-serveur>:<port-sgbd>/<nom-bd>?serverVersion=<version-server>"
 ```
 
 > [!WARNING]  
 > Adapter au besoin les informations suivantes :
-> - <utilisateur-bd> : utilisateur de la base de données
-> - <mot-de-passe> : mot de passe de l'utilisateur de la base de données
-> - <ip-serveur> : addresse IP du serveur de BDD (127.0.0.1 pour adresse loccale)
-> - <port-sgbd> : port d'écoute du serveur de BDD (3306 par défaut pour MySQL)
-> - <nom-bd> : nom de la base de données
+> - `<utilisateur-bd>` : utilisateur de la base de données
+> - `<mot-de-passe>` : mot de passe de l'utilisateur de la base de données
+> - `<ip-serveur>` : addresse IP du serveur de BDD (127.0.0.1 pour adresse loccale)
+> - `<port-sgbd>` : port d'écoute du serveur de BDD (3306 par défaut pour MySQL)
+> - `<nom-bd>` : nom de la base de données
+> - `<version-server>` : version du SGBD (facultatif)
