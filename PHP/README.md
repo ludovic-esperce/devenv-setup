@@ -1,3 +1,12 @@
+# Descriptif de la procédure
+
+Cette procédure comprend les étapes suivantes :
+1. installatoin de PHP
+2. installation de composer
+3. activation de xDebug :
+    - avec installation locale
+    - avec environnement Docker
+
 # Installation de PHP
 
 Il est possible d'installer PHP en utilisant Winget et la commande suivante :
@@ -6,7 +15,13 @@ Il est possible d'installer PHP en utilisant Winget et la commande suivante :
 winget install PHP.PHP.8.4.2
 ```
 
-Pour vérifier la bonne installation de PHP et la mise à jour correcte des variables d'environnement, utiliser la commande suivante :
+En cas de doute sur les version disponibles il est possible de les lister avec une commande telle que :
+
+```sh
+winget search PHP.PHP
+```
+
+Pour vérifier la bonne installation de PHP et la mise à jour correcte des variables d'environnement, utiliser la commande suivante (attention à bien relancer le terminal) :
 
 ```sh
 php --version
@@ -95,9 +110,6 @@ sequenceDiagram
 3. Modifier le `launch.json` de VSCode avec le contenu suivant :
 ```json
 {
-    // Use IntelliSense to learn about possible attributes.
-    // Hover to view descriptions of existing attributes.
-    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
         {
@@ -131,7 +143,7 @@ sequenceDiagram
                 "-S",
                 "localhost:0",
                 "-t",
-                "./public"
+                "./public" // A adapter en fonction de là où se situe le fichier "index.php"
             ],
             "program": "",
             "cwd": "${workspaceRoot}",
